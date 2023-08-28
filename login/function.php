@@ -38,6 +38,7 @@ class DB_con
         $result = mysqli_query($this->dbh, "select * from tblusers");
         return $result;
     }
+    
 }
 
 
