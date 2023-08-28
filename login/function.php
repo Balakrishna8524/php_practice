@@ -38,6 +38,17 @@ class DB_con
         $result = mysqli_query($this->dbh, "select * from tblusers");
         return $result;
     }
+
+    public function getUser($id){
+        $result = mysqli_query($this->dbh, "select * from tblusers where id=$id");
+        return $result;
+    }
+
+    public function updateUser($data){
+        $result = mysqli_query($this->dbh, "UPDATE `tblusers` SET `FullName`='".$data['name']."',`Username`='".$data['uname']."', `UserEmail`='".$data['email']."' WHERE `id`=".$data['uid']);
+        return $result;
+    }
+
     
 }
 
