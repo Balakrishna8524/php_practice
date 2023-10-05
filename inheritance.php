@@ -16,11 +16,5 @@
    echo $m->desciption();
    echo '<br>';
    echo $m->about();
-
-
-
-   
-
-
    
 ?>
