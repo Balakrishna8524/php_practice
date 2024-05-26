@@ -1,0 +1,31 @@
+<h2>Overloading</h2>
+<p>In PHP, overloading is the ability to define multiple methods with the same name but different parameters. PHP supports overloading using the magic methods __call(), __get(), __set(), and __isset().</p>
+<h3>Example</h3>
+
+
+<div class="code-editor">
+        
+<textarea class="code-input" id="code" rows="10" 
+placeholder="Enter your PHP code here..."><?php
+
+class Test {
+    function __call($name, $arguments) {
+        if ($name == 'hello') {
+            if (count($arguments) == 0) {
+                echo 0;
+            }
+            if (count($arguments) == 1) {
+                echo 'one';
+            }
+        }
+    }
+}
+
+$t = new Test();
+echo $t->hello(1); // Output: one
+
+?></textarea>
+<button class="run-button" onclick="runCode()">Run</button>
+<div class="output" id="output" contenteditable="true"></div>
+</div>
+
